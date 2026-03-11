@@ -1,0 +1,7 @@
+{
+  "name": "SODJA GATE",
+  "description": "Plateforme e-commerce moderne pour SODJA GATE au Togo (Notre-SOJA-GATE.surge.sh) : vente de produits alimentaires, réservations, paiements en ligne et investissements.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

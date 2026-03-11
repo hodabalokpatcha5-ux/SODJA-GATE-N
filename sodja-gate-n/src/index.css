@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00843d; /* Togo Green */
+  --color-secondary: #ffce00; /* Togo Yellow */
+  --color-accent: #d21034; /* Togo Red */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 active:scale-95 flex items-center justify-center gap-2;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 hover:shadow-primary/30;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-primary hover:bg-secondary/90 shadow-lg shadow-secondary/20 hover:shadow-secondary/30;
+  }
+  .btn-outline {
+    @apply border-2 border-primary/20 text-primary hover:bg-primary/5 hover:border-primary/40;
+  }
+  .card {
+    @apply bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1;
+  }
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- SODJA-GATE-SPA-MARKER -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SODJA GATE v1.2.0</title>
+    <meta name="version" content="1.2.0" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="loading-screen" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; color: #00843d; text-align: center; padding: 20px;">
+        <div style="font-size: 24px; font-weight: bold; mb: 10px;">SODJA GATE</div>
+        <div id="status-text">Chargement de l'application...</div>
+        <div id="error-display" style="display: none; margin-top: 20px; color: #d21034; font-size: 14px; background: #fff1f2; padding: 15px; border-radius: 10px; border: 1px solid #fecaca; max-width: 400px; word-break: break-all;"></div>
+      </div>
+    </div>
+    <script>
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        var display = document.getElementById('error-display');
+        var status = document.getElementById('status-text');
+        if (display) {
+          display.style.display = 'block';
+          display.innerHTML = '<strong>Erreur détectée :</strong><br>' + msg + '<br><small>' + url + ' (ligne ' + lineNo + ')</small>';
+          status.innerText = 'Une erreur est survenue lors du chargement.';
+        }
+        return false;
+      };
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
